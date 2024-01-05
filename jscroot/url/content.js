@@ -26,18 +26,16 @@ export function getContentURL(){
             return url.template.content+"chapter/chap09.html";
         case "messages":
             return url.template.content+"messages.html";
-        case "notifications/blocked":
-            return url.template.content+"notifications/blocked.html";
-        case "notifications/silenced":
-            return url.template.content+"notifications/silenced.html";
-        case "notifications/publish":
-            return url.template.content+"notifications/publish.html";
-        case "notifications/program":
-            return url.template.content+"notifications/program.html";
-        case "explore":
-            return url.template.content+"explore.html";
-        case "saved":
-            return url.template.content+"saved.html";
+        case "crud/insert":
+            return url.template.content+"crud/insert.html";
+        case "crud/get":
+            return url.template.content+"crud/get.html";
+        case "crud/update":
+            return url.template.content+"crud/update.html";
+        case "crud/delete":
+            return url.template.content+"crud/delete.html";
+        case "map":
+            return url.template.content+"maps.html";
         case "logout":
             return url.template.content+"logout.html";
         default:
