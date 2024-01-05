@@ -80,6 +80,61 @@ const tileLayer = new ol.layer.Tile({
 map.addLayer(tileLayer);
 
 function addGeoJSONToMapAndTable(geoJSONUrl, map, table) {
+    // ... (kode sebelumnya)
+
+    // Iterate over each feature in GeoJSON data
+    data.features.forEach(feature => {
+        // ... (kode sebelumnya)
+
+        // Iterating over coordinates of each feature
+        feature.geometry.coordinates.forEach(coordinate => {
+            // ... (kode sebelumnya)
+
+            // Point feature
+            if (feature.geometry.type === "Point") {
+                const lat = coordinate[1];
+                const long = coordinate[0];
+                // ... (kode sebelumnya)
+
+                const iconUrl = feature.properties.icon;
+                // Create a marker for each Point feature and add it to the map
+                const marker = new ol.Feature({
+                    geometry: new ol.geom.Point(ol.proj.fromLonLat([long, lat]))
+                });
+
+                if (iconUrl) {
+                    const markerStyle = new ol.style.Style({
+                        image: new ol.style.Icon({
+                            src: iconUrl,
+                            scale: 0.1
+                        })
+                    });
+                    marker.setStyle(markerStyle);
+                }
+                vectorSource.addFeature(marker);
+            } else if (feature.geometry.type === "LineString" || feature.geometry.type === "Polygon") {
+                // Create a feature for LineString and Polygon
+                const geometry = new ol.geom[feature.geometry.type](coordinates);
+                const featureGeom = new ol.Feature({
+                    geometry: geometry
+                });
+                vectorSource.addFeature(featureGeom);
+            }
+
+            // ... (kode sebelumnya)
+        });
+
+        // ... (kode sebelumnya)
+    });
+}
+
+// Call the function for each GeoJSON URL
+addGeoJSONToMapAndTable('https://raw.githubusercontent.com/muhammad-faisal-ashshidiq/nugas-gis/main/chap01/geojsonLinestring.json', map, document.querySelector('table'));
+addGeoJSONToMapAndTable('https://raw.githubusercontent.com/muhammad-faisal-ashshidiq/nugas-gis/main/chap01/geojsonPloygon.json', map, document.querySelector('table'));
+addGeoJSONToMapAndTable('https://raw.githubusercontent.com/muhammad-faisal-ashshidiq/nugas-gis/main/chap01/goejsondrawPoint.json', map, document.querySelector('table'));
+
+
+function addGeoJSONToMapAndTable(geoJSONUrl, map, table) {
     fetch(geoJSONUrl)
         .then(response => response.json())
         .then(data => {
