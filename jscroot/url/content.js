@@ -8,12 +8,22 @@ export function getContentURL(){
     switch (hashlink) {
         case "home":
             return url.template.content+"home.html";
-        case "profile/passwords":
-            return url.template.content+"profile/passwords.html";
-        case "profile/mail":
-            return url.template.content+"profile/mail.html";
-        case "profile/accounts":
-            return url.template.content+"profile/accounts.html";
+        case "chapter/chap01":
+            return url.template.content+"chapter/chap01.html";
+        case "chapter/chap02":
+            return url.template.content+"chapter/chap02.html";
+        case "chapter/chap03":
+            return url.template.content+"chapter/chap03.html";
+        case "chapter/chap04":
+            return url.template.content+"chapter/chap04.html";
+        case "chapter/chap05":
+            return url.template.content+"chapter/chap05.html";
+        case "chapter/chap06":
+            return url.template.content+"chapter/chap06.html";
+        case "chapter/chap07":
+            return url.template.content+"chapter/chap07.html";
+        case "chapter/chap09":
+            return url.template.content+"chapter/chap09.html";
         case "messages":
             return url.template.content+"messages.html";
         case "notifications/blocked":
