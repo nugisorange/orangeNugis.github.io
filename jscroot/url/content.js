@@ -22,10 +22,22 @@ export function getContentURL(){
             return url.template.content+"chapter/chap06.html";
         case "chapter/chap07":
             return url.template.content+"chapter/chap07.html";
-        case "chapter/chap09":
-            return url.template.content+"chapter/chap09.html";
-        case "messages":
-            return url.template.content+"messages.html";
+        case "geo_query/GeoGeometry":
+            return url.template.content+"geo_query/GeoGeometry.html";
+        case "geo_query/GeoIntersect":
+            return url.template.content+"geo_query/GeoIntersect.html";
+        case "geo_query/GeoWithin":
+            return url.template.content+"geo_query/GeoWithin.html";
+        case "geo_query/GeoNear":
+            return url.template.content+"geo_query/GeoNear.html";
+        case "geo_query/GeoNearSphere":
+            return url.template.content+"geo_query/GeoNearSphere.html";
+        case "geo_query/GeoMaxDistance":
+            return url.template.content+"geo_query/GeoMaxDistance.html";
+        case "geo_query/GeoMinDistance":
+            return url.template.content+"geo_query/GeoMinDistance.html";
+        case "profile":
+            return url.template.content+"profile.html";
         case "crud/insert":
             return url.template.content+"crud/insert.html";
         case "crud/get":
