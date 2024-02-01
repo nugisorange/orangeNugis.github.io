@@ -1,109 +1,58 @@
-<div class="container has-text-centered">
-    <h2 class="title" id="biggreet">Tour Dates</h2>
+<!-- This is an example component -->
+<div class="max-w-2xl mx-auto p-6 bg-white dark:bg-gray-800 shadow-md rounded-md">
 
-    <div class="tile is-ancestor">
-        <div class="tile is-parent">
-            <article class="tile is-child box">
-                <figure class="image">
-                    <img src="https://images.pexels.com/photos/374710/pexels-photo-374710.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260">
-                </figure>
-                <p class="title">New York</p>
-                <p class="subtitle">Fri 27 Nov 2016</p>
-                <a class="button">Buy Tickets</a>
-            </article>
+    <form>
+        <!-- Input for Type -->
+        <div class="mb-6">
+            <label for="type" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Type</label>
+            <input type="text" name="type" id="type" class="input-field" placeholder="Type" required />
         </div>
-        <div class="tile is-parent">
-            <article class="tile is-child box">
-                <figure class="image">
-                    <img src="https://images.pexels.com/photos/374710/pexels-photo-374710.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260">
-                </figure>
-                <p class="title">New York</p>
-                <p class="subtitle">Fri 27 Nov 2016</p>
-                <a class="button">Buy Tickets</a>
-            </article>
-        </div>
-        <div class="tile is-parent">
-            <article class="tile is-child box">
-                <figure class="image">
-                    <img src="https://images.pexels.com/photos/374710/pexels-photo-374710.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260">
-                </figure>
-                <p class="title">New York</p>
-                <p class="subtitle">Fri 27 Nov 2016</p>
-                <a class="button">Buy Tickets</a>
-            </article>
-        </div>
-        <div class="tile is-parent">
-            <article class="tile is-child box">
-                <figure class="image">
-                    <img src="https://images.pexels.com/photos/374710/pexels-photo-374710.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260">
-                </figure>
-                <p class="title">New York</p>
-                <p class="subtitle">Fri 27 Nov 2016</p>
-                <a class="button">Buy Tickets</a>
-            </article>
-        </div>
-        <div class="tile is-parent">
-            <article class="tile is-child box">
-                <figure class="image">
-                    <img src="https://images.pexels.com/photos/374710/pexels-photo-374710.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260">
-                </figure>
-                <p class="title">New York</p>
-                <p class="subtitle">Fri 27 Nov 2016</p>
-                <a class="button">Buy Tickets</a>
-            </article>
-        </div>
-    </div>
 
-    <div class="tile is-ancestor">
-        <div class="tile is-parent">
-            <article class="tile is-child box">
-                <figure class="image">
-                    <img src="https://images.pexels.com/photos/374710/pexels-photo-374710.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260">
-                </figure>
-                <p class="title">New York</p>
-                <p class="subtitle">Fri 27 Nov 2016</p>
-                <a class="button">Buy Tickets</a>
-            </article>
+        <!-- Grid for Coordinate, ID -->
+        <div class="grid grid-cols-2 gap-6">
+            <div class="mb-6">
+                <label for="coordinate" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Coordinate</label>
+                <input type="text" name="coordinate" id="coordinate" class="input-field" placeholder="Coordinate" required />
+            </div>
+            <div class="mb-6">
+                <label for="id" class="block text-sm font-medium text-gray-700 dark:text-gray-300">ID</label>
+                <input type="text" name="id" id="id" class="input-field" placeholder="ID" required />
+            </div>
         </div>
-        <div class="tile is-parent">
-            <article class="tile is-child box">
-                <figure class="image">
-                    <img src="https://images.pexels.com/photos/374710/pexels-photo-374710.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260">
-                </figure>
-                <p class="title">New York</p>
-                <p class="subtitle">Fri 27 Nov 2016</p>
-                <a class="button">Buy Tickets</a>
-            </article>
+
+        <!-- Grid for Province, District -->
+        <div class="grid grid-cols-2 gap-6">
+            <div class="mb-6">
+                <label for="province" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Province</label>
+                <input type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" name="province" id="province" class="input-field" placeholder="Province" required />
+            </div>
+            <div class="mb-6">
+                <label for="district" class="block text-sm font-medium text-gray-700 dark:text-gray-300">District</label>
+                <input type="text" name="district" id="district" class="input-field" placeholder="District" required />
+            </div>
         </div>
-        <div class="tile is-parent">
-            <article class="tile is-child box">
-                <figure class="image">
-                    <img src="https://images.pexels.com/photos/374710/pexels-photo-374710.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260">
-                </figure>
-                <p class="title">New York</p>
-                <p class="subtitle">Fri 27 Nov 2016</p>
-                <a class="button">Buy Tickets</a>
-            </article>
+
+        <!-- Grid for SubDistrict, Village -->
+        <div class="grid grid-cols-2 gap-6">
+            <div class="mb-6">
+                <label for="subdistrict" class="block text-sm font-medium text-gray-700 dark:text-gray-300">SubDistrict</label>
+                <input type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" name="subdistrict" id="subdistrict" class="input-field" placeholder="SubDistrict" required />
+            </div>
+            <div class="mb-6">
+                <label for="village" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Village</label>
+                <input type="text" name="village" id="village" class="input-field" placeholder="Village" required />
+            </div>
         </div>
-        <div class="tile is-parent">
-            <article class="tile is-child box">
-                <figure class="image">
-                    <img src="https://images.pexels.com/photos/374710/pexels-photo-374710.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260">
-                </figure>
-                <p class="title">New York</p>
-                <p class="subtitle">Fri 27 Nov 2016</p>
-                <a class="button">Buy Tickets</a>
-            </article>
+
+        <!-- Input for Border -->
+        <div class="mb-6">
+            <label for="border" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Border</label>
+            <input type="text" name="border" id="border" class="input-field" placeholder="Border" required />
         </div>
-        <div class="tile is-parent">
-            <article class="tile is-child box">
-                <figure class="image">
-                    <img src="https://images.pexels.com/photos/374710/pexels-photo-374710.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260">
-                </figure>
-                <p class="title">New York</p>
-                <p class="subtitle">Fri 27 Nov 2016</p>
-                <a class="button">Buy Tickets</a>
-            </article>
-        </div>
-    </div>
+
+        <!-- Submit Button -->
+        <button type="submit" class="btn-submit">Send Coordinate</button>
+    </form>
+
+    <p class="mt-5 text-gray-500 dark:text-gray-400">GeoSpasial - GIS</p>
 </div>

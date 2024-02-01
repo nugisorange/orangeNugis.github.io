@@ -9,19 +9,21 @@ export function getContentURL(){
         case "home":
             return url.template.content+"home.html";
         case "chapter/chap01":
-            return url.template.content+"chapter/chap01.html";
+            return url.template.content+"chapter/chap01/index.html";
         case "chapter/chap02":
-            return url.template.content+"chapter/chap02.html";
+            return url.template.content+"chapter/chap02/index.html";
         case "chapter/chap03":
-            return url.template.content+"chapter/chap03.html";
+            return url.template.content+"chapter/chap03/index.html";
         case "chapter/chap04":
-            return url.template.content+"chapter/chap04.html";
+            return url.template.content+"chapter/chap04/index.html";
         case "chapter/chap05":
             return url.template.content+"chapter/chap05.html";
         case "chapter/chap06":
-            return url.template.content+"chapter/chap06.html";
+            return url.template.content+"chapter/chap06/index.html";
         case "chapter/chap07":
-            return url.template.content+"chapter/chap07.html";
+            return url.template.content+"chapter/chap07/index.html";
+        case "chapter/chap09":
+            return url.template.content+"chapter/chap09.html";
         case "geo_query/GeoGeometry":
             return url.template.content+"geo_query/GeoGeometry.html";
         case "geo_query/GeoIntersect":
