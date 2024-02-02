@@ -48,8 +48,8 @@ export function getContentURL(){
             return url.template.content+"crud/update.html";
         case "crud/delete":
             return url.template.content+"crud/delete.html";
-        case "map":
-            return url.template.content+"maps.html";
+        case "peta/maps":
+            return url.template.content+"peta/maps.html";
         case "logout":
             return url.template.content+"logout.html";
         default:
