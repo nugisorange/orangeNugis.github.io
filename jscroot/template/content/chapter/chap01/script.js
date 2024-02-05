@@ -1,41 +1,49 @@
-export function main() {
-    function processFeatureRow(table, feature) {
-        const row = table.insertRow();
-        const nameCell = row.insertCell(0);
-        const coordinatesCell = row.insertCell(1);
-        const typeCell = row.insertCell(2);
+// script.js
 
-        // Set nameCell based on properties
-        if (feature.properties.Alamat && feature.properties.Jalan) {
-            nameCell.innerText = `${feature.properties.Point}, ${feature.properties.Alamat}, ${feature.properties.Jalan}`;
-        } else if (feature.properties.Alamat) {
-            nameCell.innerText = `${feature.properties.Alamat}`;
-        } else if (feature.properties.Jalan) {
-            nameCell.innerText = `${feature.properties.Jalan}`;
-        } else {
-            nameCell.innerText = feature.properties.Point;
+document.addEventListener("DOMContentLoaded", function () {
+    // Fungsi untuk mengambil data dari Google Cloud Function
+    async function fetchData(endpoint) {
+        try {
+            const response = await fetch(endpoint);
+            const data = await response.json();
+            return data;
+        } catch (error) {
+            console.error("Error fetching data:", error);
         }
-
-        coordinatesCell.innerText = JSON.stringify(feature.geometry.coordinates);
-        typeCell.innerText = feature.geometry.type;
     }
 
-    const pointTable = document.getElementById("pointTable").getElementsByTagName('tbody')[0];
-    const polygonTable = document.getElementById("polygonTable").getElementsByTagName('tbody')[0];
-    const polylineTable = document.getElementById("polylineTable").getElementsByTagName('tbody')[0];
+    // Fungsi untuk mengisi tabel dengan data
+    function populateTable(tableId, data) {
+        const table = document.getElementById(tableId);
+        const tbody = table.getElementsByTagName("tbody")[0];
 
-    fetch("https://raw.githubusercontent.com/nugisorange/data/main/data.json")
-        .then(response => response.json())
-        .then(data => {
-            data.features.forEach(feature => {
-                if (feature.geometry.type === "Point") {
-                    processFeatureRow(pointTable, feature);
-                } else if (feature.geometry.type === "Polygon") {
-                    processFeatureRow(polygonTable, feature);
-                } else if (feature.geometry.type === "LineString") {
-                    processFeatureRow(polylineTable, feature);
-                }
-            });
-        })
-        .catch(error => console.error("Mengalami kesalahan:", error));
-}
+        // Bersihkan isi tabel sebelum mengisi kembali
+        tbody.innerHTML = "";
+
+        // Loop melalui data dan tambahkan baris ke tabel
+        data.forEach((item, index) => {
+            const row = tbody.insertRow();
+            const cellNo = row.insertCell(0);
+            const cellName = row.insertCell(1);
+            const cellCoordinates = row.insertCell(2);
+            const cellType = row.insertCell(3);
+
+            cellNo.textContent = index + 1;
+            cellName.textContent = item.name;
+            cellCoordinates.textContent = item.coordinates;
+            cellType.textContent = item.type;
+        });
+    }
+
+    // Panggil Google Cloud Function dan isi tabel masing-masing tipe
+    const endpoint = "https://asia-southeast2-project3-403614.cloudfunctions.net/gischap4";
+    
+    fetchData(endpoint + "?type=point")
+        .then(data => populateTable("pointTable", data));
+
+    fetchData(endpoint + "?type=polygon")
+        .then(data => populateTable("polygonTable", data));
+
+    fetchData(endpoint + "?type=polyline")
+        .then(data => populateTable("polylineTable", data));
+});
