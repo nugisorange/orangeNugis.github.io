@@ -22,7 +22,7 @@ export function getContentURL(){
             return url.template.content+"tugas/chap05.html";
         case "tugas/chap06":
             return url.template.content+"tugas/chap06/index.html";
-        case "tugas/chap07":
+        case "tugas":
             return url.template.content+"tugas/chap07/index.html";
         case "geo_query/GeoGeometry":
             return url.template.content+"geo_query/GeoGeometry.html";
@@ -77,14 +77,14 @@ export function getURLContentJS(){
             return url.view.content+"notifications/publish.js";
         case "notifications/program":
             return url.view.content+"notifications/program.js";
-        case "chapter/chap01":
-            return url.view.content+"chapter/chap01.js";
-        case "chapter/chap02":
-            return url.view.content+"chapter/chap02.js";
-        case "chapter/chap03":
-            return url.view.content+"chapter/chap03.js";
-        case "chapter/chap04":
-            return url.view.content+"chapter/chap04.js";
+        case "tugas":
+            return url.view.content+"tugas/chap01.js";
+        case "tugas":
+            return url.view.content+"tugas/chap02.js";
+        case "tugas":
+            return url.view.content+"tugas/chap03.js";
+        case "tugas":
+            return url.view.content+"tugas/chap04.js";
         case "explore":
             return url.view.content+"explore.js";
         // case "saved":
