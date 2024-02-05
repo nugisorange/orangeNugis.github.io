@@ -77,13 +77,13 @@ export function getURLContentJS(){
             return url.view.content+"notifications/publish.js";
         case "notifications/program":
             return url.view.content+"notifications/program.js";
-        case "chapter":
+        case "chapter/chap01":
             return url.view.content+"chapter/chap01.js";
-        case "chapter":
+        case "chapter/chap02":
             return url.view.content+"chapter/chap02.js";
-        case "chapter":
+        case "chapter/chap03":
             return url.view.content+"chapter/chap03.js";
-        case "chapter":
+        case "chapter/chap04":
             return url.view.content+"chapter/chap04.js";
         case "explore":
             return url.view.content+"explore.js";
