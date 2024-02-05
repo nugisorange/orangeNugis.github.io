@@ -10,22 +10,20 @@ export function getContentURL(){
             return url.template.content+"home.html";
         case "form":
             return url.template.content+"formUser.html";
-        case "chapter/chap01":
-            return url.template.content+"chapter/chap01/index.html";
-        case "chapter/chap02":
-            return url.template.content+"chapter/chap02/index.html";
-        case "chapter/chap03":
-            return url.template.content+"chapter/chap03/index.html";
-        case "chapter/chap04":
-            return url.template.content+"chapter/chap04/index.html";
-        case "chapter/chap05":
-            return url.template.content+"chapter/chap05.html";
-        case "chapter/chap06":
-            return url.template.content+"chapter/chap06/index.html";
-        case "chapter/chap07":
-            return url.template.content+"chapter/chap07/index.html";
-        case "chapter/chap09":
-            return url.template.content+"chapter/chap09.html";
+        case "tugas/chap01":
+            return url.template.content+"tugas/chap01/index.html";
+        case "tugas/chap02":
+            return url.template.content+"tugas/chap02/index.html";
+        case "tugas/chap03":
+            return url.template.content+"tugas/chap03/index.html";
+        case "tugas/chap04":
+            return url.template.content+"tugas/chap04/index.html";
+        case "tugas/chap05":
+            return url.template.content+"tugas/chap05.html";
+        case "tugas/chap06":
+            return url.template.content+"tugas/chap06/index.html";
+        case "tugas/chap07":
+            return url.template.content+"tugas/chap07/index.html";
         case "geo_query/GeoGeometry":
             return url.template.content+"geo_query/GeoGeometry.html";
         case "geo_query/GeoIntersect":
@@ -79,6 +77,14 @@ export function getURLContentJS(){
             return url.view.content+"notifications/publish.js";
         case "notifications/program":
             return url.view.content+"notifications/program.js";
+        case "chapter":
+            return url.view.content+"chapter/chap01.js";
+        case "chapter":
+            return url.view.content+"chapter/chap02.js";
+        case "chapter":
+            return url.view.content+"chapter/chap03.js";
+        case "chapter":
+            return url.view.content+"chapter/chap04.js";
         case "explore":
             return url.view.content+"explore.js";
         // case "saved":
