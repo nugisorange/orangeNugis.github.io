@@ -6,10 +6,11 @@ import { url } from "./config.js";
 export function getContentURL(){
     let hashlink=getHash();
     switch (hashlink) {
-        case "home":
-            return url.template.content+"home.html";
         case "form":
             return url.template.content+"formUser.html";
+    default:
+        case "home":
+            return url.template.content+"home.html";
         case "tugas/chap01":
             return url.template.content+"tugas/chap01/index.html";
         case "tugas/chap02":
