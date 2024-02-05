@@ -14,7 +14,6 @@ addCSS("https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css");
 addCSS("https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
 addCSS("https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css");
 addCSS("assets/css/styles.css");
-addCSS("assets/css/formUser.css");
 addCSS("assets/css/openlayers.css");
 
 //rendering HTML
