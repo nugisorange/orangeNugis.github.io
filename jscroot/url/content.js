@@ -8,6 +8,8 @@ export function getContentURL(){
     switch (hashlink) {
         case "home":
             return url.template.content+"home.html";
+        case "form":
+            return url.template.content+"formUser.html";
         case "chapter/chap01":
             return url.template.content+"chapter/chap01/index.html";
         case "chapter/chap02":
@@ -65,12 +67,8 @@ export function getURLContentJS(){
     switch (hashlink) {
         case "home":
             return url.view.content+"home.js";
-        case "profile/passwords":
-            return url.view.content+"profile/passwords.js";
-        case "profile/mail":
-            return url.view.content+"profile/mail.js";
-        case "profile/accounts":
-            return url.view.content+"profile/accounts.js";
+        case "form":
+            return url.view.content+"formUser.js";
         case "messages":
             return url.view.content+"messages.js";
         case "notifications/blocked":
@@ -83,8 +81,10 @@ export function getURLContentJS(){
             return url.view.content+"notifications/program.js";
         case "explore":
             return url.view.content+"explore.js";
-        case "saved":
-            return url.view.content+"saved.js";
+        // case "saved":
+        //     return url.view.content+"saved.js";
+        case "peta":
+            return url.view.content+"peta/maps.js";
         case "logout":
             return url.view.content+"logout.js";
         default:
