@@ -38,8 +38,8 @@ export function getContentURL(){
             return url.template.content+"geo_query/GeoMaxDistance.html";
         case "geo_query/GeoMinDistance":
             return url.template.content+"geo_query/GeoMinDistance.html";
-        case "profile":
-            return url.template.content+"profile.html";
+        case "blog":
+            return url.template.content+"blog.html";
         case "crud/insert":
             return url.template.content+"crud/insert.html";
         case "crud/get":
