@@ -48,7 +48,7 @@ export function getContentURL(){
             return url.template.content+"crud/update.html";
         case "crud/delete":
             return url.template.content+"crud/delete.html";
-        case "peta/maps":
+        case "peta":
             return url.template.content+"peta/maps.html";
         case "logout":
             return url.template.content+"logout.html";
