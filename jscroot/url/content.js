@@ -86,7 +86,7 @@ export function getURLContentJS(){
             case "tugas":
                 return url.view.content+"tugas/chap03.js";
             case "tugas":
-                return url.view.content+"tugas/chap04.js";
+                return url.view.content+"tugas/chap04/js/main.js";
             case "explore":
                 return url.view.content+"explore.js";
             // case "saved":
