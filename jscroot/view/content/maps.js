@@ -25,12 +25,12 @@ const geospatialSelect = document.getElementById('geospatial');
 const styles = {
     Point: {
       'circle-radius': 5,
-      'circle-fill-color': '40A2E3',
+      'circle-fill-color': 'orange',
     },
     LineString: {
       'circle-radius': 5,
-      'circle-fill-color': 'orange',
-      'stroke-color': 'orange',
+      'circle-fill-color': 'red',
+      'stroke-color': 'red',
       'stroke-width': 1.5,
     },
     Polygon: {

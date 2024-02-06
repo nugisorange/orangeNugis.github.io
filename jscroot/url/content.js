@@ -51,8 +51,8 @@ export function getContentURL(){
                 return url.template.content+"crud/update.html";
             case "crud/delete":
                 return url.template.content+"crud/delete.html";
-            case "peta":
-                return url.template.content+"peta/maps.html";
+            case "maps":
+                return url.template.content+"maps.html";
             case "logout":
                 return url.template.content+"logout.html";
     }
@@ -91,8 +91,8 @@ export function getURLContentJS(){
                 return url.view.content+"explore.js";
             // case "saved":
             //     return url.view.content+"saved.js";
-            case "peta":
-                return url.view.content+"peta/maps.js";
+            case "maps":
+                return url.view.content+"maps.js";
             case "logout":
                 return url.view.content+"logout.js";
     }
