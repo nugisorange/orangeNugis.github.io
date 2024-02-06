@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const polylineTable = document.getElementById("polylineTable").getElementsByTagName('tbody')[0];
 
     // Replace the URL with your Google Cloud Function endpoint
-    const cloudFunctionEndpoint = "https://your-cloud-function-url"; 
+    const cloudFunctionEndpoint = "https://asia-southeast2-project3-403614.cloudfunctions.net/gischap4"; 
 
     fetch(cloudFunctionEndpoint)
         .then(response => response.json())
