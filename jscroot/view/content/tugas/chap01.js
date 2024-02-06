@@ -1,54 +1,54 @@
-// import {setInner} from "https://cdn.jsdelivr.net/gh/jscroot/element@0.1.2/croot.js";
+import {setInner} from "https://cdn.jsdelivr.net/gh/jscroot/element@0.1.2/croot.js";
 
 // export function main(){
 //     setInner("Sankuy","Halo Ngadimin");
 //     addGeoJSONToMapAndTable('', map, document.querySelector('table'));
 // }
 
-document.addEventListener("DOMContentLoaded", function () {
-    // Fungsi untuk mengambil data dari Google Cloud Function
-    async function fetchData(endpoint) {
-        try {
-            const response = await fetch(endpoint);
-            const data = await response.json();
-            return data;
-        } catch (error) {
-            console.error("Error fetching data:", error);
-        }
-    }
+document.addEventListener("DOMContentLoaded", () => {
+    const pointTable = document.getElementById("pointTable").getElementsByTagName('tbody')[0];
+    const polygonTable = document.getElementById("polygonTable").getElementsByTagName('tbody')[0];
+    const polylineTable = document.getElementById("polylineTable").getElementsByTagName('tbody')[0];
 
-    // Fungsi untuk mengisi tabel dengan data
-    function populateTable(tableId, data) {
-        const table = document.getElementById(tableId);
-        const tbody = table.getElementsByTagName("tbody")[0];
+    // Replace the URL with your Google Cloud Function endpoint
+    const cloudFunctionEndpoint = "https://your-cloud-function-url"; 
 
-        // Bersihkan isi tabel sebelum mengisi kembali
-        tbody.innerHTML = "";
+    fetch(cloudFunctionEndpoint)
+        .then(response => response.json())
+        .then(data => {
+            let countPoint = 1;
+            let countPolygon = 1;
+            let countPolyline = 1;
 
-        // Loop melalui data dan tambahkan baris ke tabel
-        data.forEach((item, index) => {
-            const row = tbody.insertRow();
-            const cellNo = row.insertCell(0);
-            const cellName = row.insertCell(1);
-            const cellCoordinates = row.insertCell(2);
-            const cellType = row.insertCell(3);
+            data.features.forEach(feature => {
+                const row = document.createElement("tr");
+                const namaCell = document.createElement("td");
+                const kordinattesCell = document.createElement("td");
+                const tipeCell = document.createElement("td");
 
-            cellNo.textContent = index + 1;
-            cellName.textContent = item.name;
-            cellCoordinates.textContent = item.coordinates;
-            cellType.textContent = item.type;
-        });
-    }
+                namaCell.innerText = feature.properties.nama;
+                kordinattesCell.innerText = JSON.stringify(feature.geometry.coordinates);
+                tipeCell.innerText = feature.geometry.type;
 
-    // Panggil Google Cloud Function dan isi tabel masing-masing tipe
-    const endpoint = "https://asia-southeast2-project3-403614.cloudfunctions.net/gischap4";
-    
-    fetchData(endpoint + "?type=point")
-        .then(data => populateTable("pointTable", data));
+                row.appendChild(document.createElement("th"));
+                row.appendChild(namaCell);
+                row.appendChild(kordinattesCell);
+                row.appendChild(tipeCell);
 
-    fetchData(endpoint + "?type=polygon")
-        .then(data => populateTable("polygonTable", data));
-
-    fetchData(endpoint + "?type=polyline")
-        .then(data => populateTable("polylineTable", data));
+                if (feature.geometry.type === "Point") {
+                    row.getElementsByTagName("th")[0].innerText = countPoint;
+                    pointTable.appendChild(row);
+                    countPoint++;
+                } else if (feature.geometry.type === "Polygon") {
+                    row.getElementsByTagName("th")[0].innerText = countPolygon;
+                    polygonTable.appendChild(row);
+                    countPolygon++;
+                } else if (feature.geometry.type === "LineString") {
+                    row.getElementsByTagName("th")[0].innerText = countPolyline;
+                    polylineTable.appendChild(row);
+                    countPolyline++;
+                }
+            });
+        })
+        .catch(error => console.error("Err:", error));
 });
